@@ -72,7 +72,7 @@ class DioLogInterceptor implements Interceptor {
             'dio_log: request: duration:${getTimeStr1(log.reqOptions!.requestTime!)}');
         print('dio_log: response: ${toJson(log.resOptions?.data)}');
       } catch(e) {
-        print('dio_error:'$e);
+        print('dio_error:'${e.toString()});
       }
       
     }
