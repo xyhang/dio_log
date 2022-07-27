@@ -62,7 +62,7 @@ class DioLogInterceptor implements Interceptor {
     resOpt.headers = response.headers.map;
     logManage?.onResponse(resOpt);
     if (enablePrintLog) {
-      try{
+      try {
         NetOptions log =
             LogPoolManager.getInstance().logMap[resOpt.id.toString()]!;
         print('dio_log: request: url:${log.reqOptions?.url}');
@@ -71,7 +71,7 @@ class DioLogInterceptor implements Interceptor {
         print(
             'dio_log: request: duration:${getTimeStr1(log.reqOptions!.requestTime!)}');
         print('dio_log: response: ${toJson(log.resOptions?.data)}');
-      }catch(Excepation e){
+      } catch(e) {
         print('dio_error':e);
       }
       
